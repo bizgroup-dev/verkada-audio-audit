@@ -24,7 +24,10 @@ VERKADA_API_KEY="<your-key>" bun run audit.ts
 
 1. Log into **Verkada Command** at [command.verkada.com](https://command.verkada.com)
 2. Click the **gear icon** (bottom-left) → **Integrations** → **API Keys**
-3. Click **+ Add API Key**
+
+![Verkada Command API Keys](verkada-api-key-setup.png)
+
+3. Click **+ Add**
 4. Set:
    - **Name:** `audio-audit` (or any label)
    - **Permissions:** Check both:
