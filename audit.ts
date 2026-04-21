@@ -97,7 +97,7 @@ function sleep(ms: number): Promise<void> {
 
 const apiKey = process.env.VERKADA_API_KEY;
 if (!apiKey) {
-  console.error('Usage: VERKADA_API_KEY="<key>" bun run audit.ts [--csv]');
+  console.error('Usage: VERKADA_API_KEY="<key>" ./verkada-audio-audit [--csv]');
   console.error('');
   console.error('Create an API key in Verkada Command with "Cameras" + "Camera Audio" scopes.');
   console.error('See README.md for detailed instructions.');
@@ -192,6 +192,6 @@ if (!csvMode) {
   }
 
   console.log('');
-  console.log('  Export to CSV: VERKADA_API_KEY="<key>" bun run audit.ts --csv > report.csv');
+  console.log('  Export to CSV: VERKADA_API_KEY="<key>" ./verkada-audio-audit --csv > report.csv');
   console.log('');
 }
