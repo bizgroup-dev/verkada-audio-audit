@@ -4,6 +4,8 @@ Bulk-check microphone/audio status across all cameras in a Verkada organization.
 
 **Why?** Verkada Command only lets you check audio settings one camera at a time. With 100+ cameras, that's impractical. This tool audits your entire fleet in seconds.
 
+![Screenshot](screenshot.png)
+
 ## Quick Start
 
 ```bash
@@ -94,11 +96,38 @@ Opens in Excel/Google Sheets. Columns: Site, Camera Name, Model, Serial, Online,
 | All cameras show `error` | API key needs **Camera Audio** permission. Edit in Verkada Command. |
 | `401 on token` | Key is invalid or expired. Create a new one (90-day expiry). |
 
+## Download (No Dependencies)
+
+Pre-built binaries are available on the [Releases page](https://github.com/bizgroup-dev/verkada-audio-audit/releases):
+
+| Platform | Binary |
+|----------|--------|
+| macOS (Apple Silicon) | `verkada-audio-audit-mac-arm64` |
+| macOS (Intel) | `verkada-audio-audit-mac-intel` |
+| Linux (x64) | `verkada-audio-audit-linux` |
+
+```bash
+# Download from Releases, then:
+chmod +x verkada-audio-audit-mac-arm64
+VERKADA_API_KEY="<key>" ./verkada-audio-audit-mac-arm64
+```
+
+> **Windows:** Install [Bun](https://bun.sh) and run `bun run audit.ts` from the source code.
+
+## Build from Source
+
+Requires [Bun](https://bun.sh) runtime (v1.0+):
+
+```bash
+git clone https://github.com/bizgroup-dev/verkada-audio-audit.git
+cd verkada-audio-audit
+VERKADA_API_KEY="<key>" bun run audit.ts
+```
+
 ## Requirements
 
-- [Bun](https://bun.sh) runtime (v1.0+)
 - Network access to `api.verkada.com`
-- No other dependencies
+- Verkada API key with Cameras + Camera Audio scopes
 
 ## License
 

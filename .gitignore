@@ -2,3 +2,4 @@ node_modules/
 *.csv
 .env
 verkada-audio-audit
+verkada-audio-audit-*
